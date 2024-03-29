@@ -149,6 +149,8 @@ public class expediente extends javax.swing.JFrame {
 
         jButton4.setText("Denunciado");
 
+        jPanel4.setBackground(new java.awt.Color(235, 235, 235));
+
         jButton1.setText("Cancelar");
 
         jButton5.setText("Guardar");
