@@ -55,6 +55,10 @@ public class NewFXMain extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        data ObjConexion = new data();
+        ObjConexion.ConectarBases();
+        
+        
         launch(args);
     }
     
