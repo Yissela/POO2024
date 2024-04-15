@@ -43,7 +43,7 @@ public class NewFXMain extends Application {
         primaryStage.show();
     }
  */
-       Parent root = FXMLLoader.load(getClass().getResource("/ventanas/Fx.fxml"));
+       Parent root = FXMLLoader.load(getClass().getResource("/ventanas/Ofendido.fxml"));
        Scene scene = new Scene(root);
        primaryStage.setScene(scene);
        primaryStage.show();

@@ -16,12 +16,21 @@ import javafx.beans.property.StringProperty;
  public abstract class persona {
      
         private int id;
+
+    public StringProperty getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(StringProperty direccion) {
+        this.direccion = direccion;
+    }
         private  StringProperty nombre = new SimpleStringProperty();
         private StringProperty apellido = new SimpleStringProperty(); 
         private StringProperty sexo = new SimpleStringProperty();
         private StringProperty genero = new SimpleStringProperty();
-        private direccion[] direccion; 
+        //private direccion[] direccion; 
         private StringProperty estado_civil = new SimpleStringProperty();
+        private StringProperty direccion = new SimpleStringProperty();
 
     public int getId() {
         return id;
@@ -63,13 +72,7 @@ import javafx.beans.property.StringProperty;
         this.genero = genero;
     }
 
-    public direccion[] getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(direccion[] direccion) {
-        this.direccion = direccion;
-    }
+ 
 
     public StringProperty getEstado_civil() {
         return estado_civil;
@@ -82,14 +85,7 @@ import javafx.beans.property.StringProperty;
        
         
         
-         public void InfoPersona(){
-          System.out.print("Nombre y apellido:" + nombre+ "  " + apellido + "  Direccion:" );
-          for (direccion direcciones: direccion) {
-            System.out.println("- " + direcciones.direccionImpresion());
-        }
-    
-        
-        }
+         
  }
 
     

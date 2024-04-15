@@ -4,36 +4,35 @@
  */
 package DAO;
 
-import model.ofendido;
 import proyecto.data;
-
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import model.expediente;
+
 
 /**
  *
  * @author Dimas
  */
-public class OfendidoDAO {
+public class ExpedienteDAO {
     
-    private data conexion;
     
-    public OfendidoDAO(data conexion){
+     private data conexion;
+    
+    public ExpedienteDAO(data conexion){
             this.conexion = conexion;
     }
   
     
 
     
-    public void guardar(ofendido o) throws SQLException{
+    public void guardar(expediente e) throws SQLException{
     
         String sql = null;
-        if(!String.valueOf(o.getId()).equals(" ") ){
-           sql = "INSERT INTO public.ofendido(\n" +
-    "	id_ofendido, nombre, apellido, sexo, genero, direccion)\n" +
-    "	VALUES ('"+ o.getId() +"','" + o.getNombre() +"','" + o.getApellido() + "','" + o.getSexo()+"','" + o.getGenero()+"','"+ o.getDireccion()+"')";
+        if(!String.valueOf(e.getnExpediente()).equals(" ") ){
+            sql = "";
         }
     PreparedStatement pst = this.conexion.getConexion().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
     
@@ -41,6 +40,6 @@ public class OfendidoDAO {
     
     
     }
-   
-   
+    
+    
 }
