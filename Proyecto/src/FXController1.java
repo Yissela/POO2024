@@ -55,10 +55,22 @@ public class FXController1 implements Initializable {
         
         if(evt.equals(btBuscar)){
         
-        logalStage("/ventanas/Ofendido.fxml", event);
+        logalStage("/ventanas/Buscar.fxml", event);
         
         }
     }
+     @FXML
+    private void VerEliminar(ActionEvent event){
+        
+        Object evt = event.getSource();
+        
+        if(evt.equals(btEliminar)){
+        
+        logalStage("/ventanas/Eliminar.fxml", event);
+        
+        }
+    }
+    
 
     /**
      * Initializes the controller class.

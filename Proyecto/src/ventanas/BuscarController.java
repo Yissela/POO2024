@@ -2,6 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
+package ventanas;
 
 import java.io.IOException;
 import java.net.URL;
@@ -17,9 +18,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -28,39 +27,16 @@ import javafx.stage.Stage;
  *
  * @author Dimas
  */
-public class NuevoController implements Initializable {
+public class BuscarController implements Initializable {
 
     @FXML
-    private DatePicker txFecha;
+    private Button btAtras;
     @FXML
-    private ChoiceBox<?> txEstado;
+    private TextField id;
     @FXML
-    private TextArea txBreve;
+    private Label LbNombre;
     @FXML
-    private TextField txDelito;
-    @FXML
-    private Button btOfendido;
-    @FXML
-    private Button btDenunciado;
-    @FXML
-    private Button btDenunciante;
-    @FXML
-    private Button btGuardar;
-    @FXML
-    private Button BtCancelar;
-    
-    
-    @FXML
-    private void Atras(ActionEvent event){
-        
-        Object evt = event.getSource();
-        
-        if(evt.equals(BtCancelar)){
-        
-        logalStage("/ventanas/Fx.fxml", event);
-        
-        }
-    }
+    private Label LbApellido;
 
     /**
      * Initializes the controller class.
@@ -68,10 +44,22 @@ public class NuevoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }  
+    }    
+
+    @FXML
+    private void Atras(ActionEvent event) {
+        
+        Object evt = event.getSource();
+        
+        if(evt.equals(btAtras)){
+        
+        logalStage("/ventanas/Delitos.fxml", event);
+        
+        }
+    }
     
     
-    private void logalStage(String url, Event event){
+     private void logalStage(String url, Event event){
         
         try{
         
@@ -89,13 +77,12 @@ public class NuevoController implements Initializable {
        
        
         }catch (IOException e){
-        Logger.getLogger(FXController1.class.getName()).log(Level.SEVERE, null, e);
+        Logger.getLogger(BuscarController.class.getName()).log(Level.SEVERE, null, e);
         
         
         }
         
     
     }
-    
     
 }

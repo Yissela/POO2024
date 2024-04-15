@@ -9,6 +9,6 @@
       <Accordion layoutX="49.0" layoutY="38.0" />
       <Button fx:id="btNuevo" layoutX="122.0" layoutY="56.0" mnemonicParsing="false" onAction="#VerNuevo" prefHeight="49.0" prefWidth="121.0" text="Nuevo" />
       <Button fx:id="btBuscar" layoutX="122.0" layoutY="150.0" mnemonicParsing="false" onAction="#VerBuscar" prefHeight="49.0" prefWidth="121.0" text="Buscar" />
-      <Button fx:id="btEliminar" layoutX="122.0" layoutY="253.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="121.0" text="Eliminar" />
+      <Button fx:id="btEliminar" layoutX="122.0" layoutY="253.0" mnemonicParsing="false" onAction="#VerEliminar" prefHeight="49.0" prefWidth="121.0" text="Eliminar" />
    </children>
 </AnchorPane>

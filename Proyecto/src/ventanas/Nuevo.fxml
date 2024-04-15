@@ -45,6 +45,6 @@
       <Button fx:id="btDenunciado" layoutX="234.0" layoutY="337.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="109.0" text="Denunciado" />
       <Button fx:id="btDenunciante" layoutX="400.0" layoutY="337.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="109.0" text="Denunciante" />
       <Button fx:id="btGuardar" layoutX="153.0" layoutY="448.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="103.0" text="Guardar" />
-      <Button fx:id="BtCancelar" layoutX="354.0" layoutY="448.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="103.0" text="Cancelar" />
+      <Button fx:id="BtCancelar" layoutX="354.0" layoutY="448.0" mnemonicParsing="false" onAction="#Atras" prefHeight="42.0" prefWidth="103.0" text="Cancelar" />
    </children>
 </AnchorPane>
