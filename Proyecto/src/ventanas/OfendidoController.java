@@ -105,12 +105,12 @@ public class OfendidoController implements Initializable {
         if (!txtId.getText().equals("") && !txtNombre.getText().equals("") ){
             ofendido ofendido = new ofendido();
             ofendido.setId(Integer.parseInt(txtId.getText()));
-            ofendido.setNombre(txtNombre.textProperty());
-            ofendido.setApellido(txtApellido.textProperty());
-            ofendido.setEstado_civil(txtEstado.textProperty());
-            ofendido.setSexo(txtDelitos.textProperty());
-            ofendido.setGenero(txtGenero.textProperty());
-            ofendido.setDireccion(txtReferencia.textProperty());
+            ofendido.setNombre(txtNombre.getText());
+            ofendido.setApellido(txtApellido.getText());
+            //ofendido.setEstado_civil(txtEstado.textProperty());
+            ofendido.setSexo(txtDelitos.getText());
+            ofendido.setGenero(txtGenero.getText());
+            ofendido.setDireccion(txtEstado.getText());
             try{
                 this.conexion.ConectarBases();
                 OfendidoDAO ofendidoDao = new OfendidoDAO(conexion);

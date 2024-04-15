@@ -16,21 +16,13 @@ import javafx.beans.property.StringProperty;
  public abstract class persona {
      
         private int id;
-
-    public StringProperty getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(StringProperty direccion) {
-        this.direccion = direccion;
-    }
-        private  StringProperty nombre = new SimpleStringProperty();
-        private StringProperty apellido = new SimpleStringProperty(); 
-        private StringProperty sexo = new SimpleStringProperty();
-        private StringProperty genero = new SimpleStringProperty();
+        private  String nombre;
+        private String apellido; 
+        private String sexo;
+        private String genero;
         //private direccion[] direccion; 
-        private StringProperty estado_civil = new SimpleStringProperty();
-        private StringProperty direccion = new SimpleStringProperty();
+        private String estado_civil;
+        private String direccion;
 
     public int getId() {
         return id;
@@ -40,48 +32,57 @@ import javafx.beans.property.StringProperty;
         this.id = id;
     }
 
-    public StringProperty getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(StringProperty nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public StringProperty getApellido() {
+    public String getApellido() {
         return apellido;
     }
 
-    public void setApellido(StringProperty apellido) {
+    public void setApellido(String apellido) {
         this.apellido = apellido;
     }
 
-    public StringProperty getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(StringProperty sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
-    public StringProperty getGenero() {
+    public String getGenero() {
         return genero;
     }
 
-    public void setGenero(StringProperty genero) {
+    public void setGenero(String genero) {
         this.genero = genero;
+    }
+
+    public String getEstado_civil() {
+        return estado_civil;
+    }
+
+    public void setEstado_civil(String estado_civil) {
+        this.estado_civil = estado_civil;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
  
 
-    public StringProperty getEstado_civil() {
-        return estado_civil;
-    }
-
-    public void setEstado_civil(StringProperty estado_civil) {
-        this.estado_civil = estado_civil;
-    }
-
+   
        
         
         

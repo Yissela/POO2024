@@ -81,7 +81,7 @@
       <TextField fx:id="txtAldea" layoutX="184.0" layoutY="363.0" prefHeight="25.0" prefWidth="226.0" />
       <TextField fx:id="txtCalle" layoutX="184.0" layoutY="398.0" prefHeight="25.0" prefWidth="226.0" />
       <TextField fx:id="txtBloque" layoutX="184.0" layoutY="436.0" prefHeight="25.0" prefWidth="226.0" />
-      <Button fx:id="btGuardad" layoutX="38.0" layoutY="584.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Guardar" />
+      <Button fx:id="btGuardad" layoutX="38.0" layoutY="584.0" mnemonicParsing="false" onAction="#Guardar" prefHeight="25.0" prefWidth="118.0" text="Guardar" />
       <Button fx:id="BtBuscar" layoutX="340.0" layoutY="584.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Buscar" />
       <ComboBox fx:id="txtDepartamento" layoutX="184.0" layoutY="284.0" prefHeight="25.0" prefWidth="226.0" />
       <Label layoutX="2.0" text="Denunciante">

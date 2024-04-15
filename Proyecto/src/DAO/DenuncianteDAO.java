@@ -32,7 +32,9 @@ public class DenuncianteDAO {
     
         String sql = null;
         if(!String.valueOf(de.getId()).equals(" ") ){
-            sql = "";
+            sql = "INSERT INTO public.denunciante(\n" +
+"	id_denunciante, nombre, apellido, sexo, genero, estado_civil, direccion)\n" +
+"	VALUES ('"+ de.getId() +"','" + de.getNombre() +"','" + de.getApellido() + "','" + de.getSexo()+"','" + de.getGenero()+"','"+ de.getDireccion()+"')";
         }
     PreparedStatement pst = this.conexion.getConexion().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
     

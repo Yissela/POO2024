@@ -4,14 +4,22 @@
  */
 package ventanas;
 
+import DAO.DenuncianteDAO;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javax.swing.JOptionPane;
+import model.denunciante;
+import proyecto.data;
 
 /**
  * FXML Controller class
@@ -52,9 +60,42 @@ public class DenuncianteController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
+     private  data conexion = new data();
+     
+     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void Guardar(ActionEvent event) {
+        
+         if (!txtId.getText().equals("") && !txtNombre.getText().equals("") ){
+            denunciante denunciante = new denunciante();
+            denunciante.setId(Integer.parseInt(txtId.getText()));
+            denunciante.setNombre(txtNombre.getText());
+            denunciante.setApellido(txtApellido.getText());
+            denunciante.setEstado_civil(txtEstado.getText());
+            denunciante.setSexo(txtDelitos.getText());
+            denunciante.setGenero(txtGenero.getText());
+            denunciante.setDireccion(txtReferencia.getText());
+            try{
+                this.conexion.ConectarBases();
+                DenuncianteDAO denuncianteDao = new DenuncianteDAO(conexion);
+                denuncianteDao.guardar(denunciante);
+                
+            
+            }catch(SQLException ex){
+            Logger.getLogger(DenuncianteController.class.getName()).log(Level.SEVERE, null, ex);
+                 JOptionPane.showMessageDialog(null, "Eror al guardar");
+            }
+
+        
+        }
+        
+        
+    }
     
 }
