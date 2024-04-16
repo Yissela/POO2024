@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="579.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NuevoController">
+<AnchorPane id="AnchorPane" prefHeight="615.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="NuevoController">
    <children>
-      <Label layoutX="32.0" layoutY="23.0" prefHeight="17.0" prefWidth="43.0" text="Datos" />
+      <Label layoutX="33.0" layoutY="28.0" prefHeight="17.0" prefWidth="43.0" text="Datos" />
       <Label layoutX="57.0" layoutY="56.0" text="Fecha">
          <font>
             <Font size="14.0" />
@@ -41,10 +41,14 @@
       </ChoiceBox>
       <TextArea fx:id="txBreve" layoutX="215.0" layoutY="195.0" prefHeight="91.0" prefWidth="330.0" />
       <TextField fx:id="txDelito" layoutX="216.0" layoutY="97.0" prefHeight="25.0" prefWidth="174.0" />
-      <Button fx:id="btOfendido" layoutX="79.0" layoutY="337.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="109.0" text="Ofendido" />
-      <Button fx:id="btDenunciado" layoutX="234.0" layoutY="337.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="109.0" text="Denunciado" />
-      <Button fx:id="btDenunciante" layoutX="400.0" layoutY="337.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="109.0" text="Denunciante" />
-      <Button fx:id="btGuardar" layoutX="153.0" layoutY="448.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="103.0" text="Guardar" />
-      <Button fx:id="BtCancelar" layoutX="354.0" layoutY="448.0" mnemonicParsing="false" onAction="#Atras" prefHeight="42.0" prefWidth="103.0" text="Cancelar" />
+      <Button fx:id="btOfendido" layoutX="75.0" layoutY="430.0" mnemonicParsing="false" onAction="#Ofendido" prefHeight="42.0" prefWidth="109.0" text="Ofendido" />
+      <Button fx:id="btDenunciado" layoutX="248.0" layoutY="430.0" mnemonicParsing="false" onAction="#Denunciado" prefHeight="42.0" prefWidth="109.0" text="Denunciado" />
+      <Button fx:id="btDenunciante" layoutX="418.0" layoutY="430.0" mnemonicParsing="false" onAction="#Denunciante" prefHeight="42.0" prefWidth="109.0" text="Denunciante" />
+      <Button fx:id="btGuardar" layoutX="153.0" layoutY="534.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="103.0" text="Guardar" />
+      <Button fx:id="BtCancelar" layoutX="350.0" layoutY="534.0" mnemonicParsing="false" onAction="#Atras" prefHeight="42.0" prefWidth="103.0" text="Cancelar" />
+      <Label layoutX="33.0" layoutY="379.0" prefHeight="32.0" prefWidth="249.0" text="Agregar personas a la base de datos " />
+      <TextField fx:id="txtOfendido" layoutX="55.0" layoutY="337.0" promptText="ID del ofendido" />
+      <TextField fx:id="txtDenunciado" layoutX="235.0" layoutY="337.0" promptText="ID del denunciado" />
+      <TextField fx:id="txtDenunciante" layoutX="425.0" layoutY="337.0" promptText="ID del denunciante" />
    </children>
 </AnchorPane>

@@ -24,6 +24,27 @@ import javax.swing.JOptionPane;
 import model.delito;
 import model.ofendido;
 import proyecto.data;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -38,8 +59,6 @@ public class OfendidoController implements Initializable {
     @FXML
     private TextField txtId;
     @FXML
-    private TextArea txtReferencia;
-    @FXML
     private TextField txtNombre;
     @FXML
     private TextField txtApellido;
@@ -50,40 +69,11 @@ public class OfendidoController implements Initializable {
     @FXML
     private TextField txtDelitos;
     @FXML
-    private TextField txtMunicipio;
-    @FXML
-    private TextField txtAldea;
-    @FXML
-    private TextField txtCalle;
-    @FXML
-    private TextField txtBloque;
-    @FXML
     private Button btGuardad;
     @FXML
-    private Button BtBuscar;
-    @FXML
-    private ComboBox<String> txtDepartamento;
+    private Button btAtras;
     
-    ObservableList<String> departamentos = FXCollections.observableArrayList(
-            "Atlántida",
-"Choluteca",
-"Colón",
-"Comayagua",
-"Copán",
-"Cortés",
-"El Paraíso",
-"Francisco Morazán",
-"Gracias a Dios",
-"Intibucá",
-"Islas de la Bahía",
-"La Paz",
-"Lempira",
-"Ocotepeque",
-"Olancho",
-"Santa Bárbara",
-"Valle",
-"Yoro"
-);
+  
     
     /**
      * Initializes the controller class.
@@ -92,10 +82,11 @@ public class OfendidoController implements Initializable {
     
     private OfendidoDAO OfendidoDao;
     private  data conexion = new data();
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
    
-       txtDepartamento.setItems(departamentos);
+       
         
     }    
 
@@ -128,5 +119,48 @@ public class OfendidoController implements Initializable {
         
         
     }
+
+    @FXML
+    private void atras(ActionEvent event) {
+        
+          Object evt = event.getSource();
+        
+        if(evt.equals(btAtras)){
+        
+        logalStage("/ventanas/Nuevo.fxml", event);
+        
+        }
+        
+        
+    }
+    
+    
+    
+      private void logalStage(String url, Event event){
+        
+        try{
+        
+        // Oculta la ventana actual
+        ((Node)(event.getSource())).getScene().getWindow().hide();
+        
+        // Carga el archivo FXML proporcionado
+        Parent root = FXMLLoader.load(getClass().getResource(url));
+        Scene scene = new Scene(root);
+        
+        // Crea y muestra una nueva ventana
+        Stage newStage = new Stage();
+        newStage.setScene(scene);
+        newStage.show();
+       
+       
+        }catch (IOException e){
+        Logger.getLogger(OfendidoController.class.getName()).log(Level.SEVERE, null, e);
+        
+        
+        }
+        
+    
+    }
+    
     
 }

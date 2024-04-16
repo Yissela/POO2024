@@ -8,6 +8,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -33,7 +35,7 @@ public class NuevoController implements Initializable {
     @FXML
     private DatePicker txFecha;
     @FXML
-    private ChoiceBox<?> txEstado;
+    private ChoiceBox<String> txEstado;
     @FXML
     private TextArea txBreve;
     @FXML
@@ -48,6 +50,12 @@ public class NuevoController implements Initializable {
     private Button btGuardar;
     @FXML
     private Button BtCancelar;
+    @FXML
+    private TextField txtOfendido;
+    @FXML
+    private TextField txtDenunciado;
+    @FXML
+    private TextField txtDenunciante;
     
     
     @FXML
@@ -62,11 +70,18 @@ public class NuevoController implements Initializable {
         }
     }
 
+    
+        ObservableList<String> estado = FXCollections.observableArrayList(
+            "En observacion","En proceso","Senteciado"
+
+);
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        txEstado.setItems(estado);
         // TODO
     }  
     
@@ -95,6 +110,43 @@ public class NuevoController implements Initializable {
         }
         
     
+    }
+
+    @FXML
+    private void Ofendido(ActionEvent event) {
+        
+         Object evt = event.getSource();
+        
+        if(evt.equals(btOfendido)){
+        
+        logalStage("/ventanas/Ofendido.fxml", event);
+        
+        }
+    }
+
+    @FXML
+    private void Denunciado(ActionEvent event) {
+        
+         Object evt = event.getSource();
+        
+        if(evt.equals(btDenunciado)){
+        
+        logalStage("/ventanas/Denunciado.fxml", event);
+        
+        }
+        
+    }
+
+    @FXML
+    private void Denunciante(ActionEvent event) {
+          Object evt = event.getSource();
+        
+        if(evt.equals(btDenunciante)){
+        
+        logalStage("/ventanas/Denunciante.fxml", event);
+        
+        }
+        
     }
     
     
