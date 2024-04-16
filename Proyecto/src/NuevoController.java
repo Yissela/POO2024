@@ -3,8 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
 
+import DAO.ExpedienteDAO;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,6 +26,10 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
+import model.expediente;
+import proyecto.data;
+import ventanas.OfendidoController;
 
 /**
  * FXML Controller class
@@ -56,6 +62,10 @@ public class NuevoController implements Initializable {
     private TextField txtDenunciado;
     @FXML
     private TextField txtDenunciante;
+    @FXML
+    private TextField txtExpediente;
+    
+     private  data conexion = new data();
     
     
     @FXML
@@ -146,6 +156,43 @@ public class NuevoController implements Initializable {
         logalStage("/ventanas/Denunciante.fxml", event);
         
         }
+        
+    }
+
+    @FXML
+    private void guardar(ActionEvent event) {
+
+          if (!txtExpediente.getText().equals("")){
+            expediente expediente = new expediente();
+            expediente.setIdExpediente(Integer.parseInt(txtExpediente.getText()));
+            expediente.setBreveNarracion(txBreve.getText());
+            expediente.setDelitos(txDelito.getText());
+            expediente.setEstadoExpediente(txEstado.getValue());
+            expediente.setFecha(txFecha.getValue());
+            
+            
+            expediente expeOfendido = new expediente();
+            
+            expeOfendido.setIdOfendido(Integer.parseInt(txtOfendido.getText()));
+            expeOfendido.setIdExpediente(Integer.parseInt(txtOfendido.getText()));
+            expeOfendido.setIdOfendido(Integer.parseInt(txtOfendido.getText()));
+            
+            try{
+                this.conexion.ConectarBases();
+                ExpedienteDAO expedienteDao = new ExpedienteDAO(conexion);
+                expedienteDao.guardar(expediente);
+                expedienteDao.guardarOfendido(expeOfendido);
+                
+            
+            }catch(SQLException ex){
+            Logger.getLogger(OfendidoController.class.getName()).log(Level.SEVERE, null, ex);
+                 JOptionPane.showMessageDialog(null, "Eror al guardar");
+            }
+
+        
+        }
+        
+        
         
     }
     

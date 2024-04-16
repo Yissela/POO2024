@@ -31,7 +31,37 @@ public class ExpedienteDAO {
     public void guardar(expediente e) throws SQLException{
     
         String sql = null;
-        if(!String.valueOf(e.getnExpediente()).equals(" ") ){
+        if(!String.valueOf(e.getIdExpediente()).equals(" ") ){
+            sql = "INSERT INTO public.expediente(\n" +
+"	n_expediente, breve_narracion, estado_expe, fecha, delito)\n" +
+"	VALUES ('"+e.getIdExpediente()+"', '"+e.getBreveNarracion()+"', '"+e.getEstadoExpediente()+"','"+ e.getFecha()+"','" +e.getDelitos()+"');";
+        }
+    PreparedStatement pst = this.conexion.getConexion().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+    
+    pst.executeUpdate();
+    
+    
+    }
+    
+     public void guardarOfendido(expediente e) throws SQLException{
+    
+        String sql = null;
+        if(!String.valueOf(e.getIdExpediente()).equals(" ") ){
+            sql = "INSERT INTO public.expe_ofendido(\n" +
+"	\"id_expeOfen\", n_expediente, id_ofendido)\n" +
+"	VALUES ('"+e.getIdOfendido()+"','"+e.getIdExpediente()+"','"+e.getIdOfendido()+"');";
+        }
+    PreparedStatement pst = this.conexion.getConexion().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+    
+    pst.executeUpdate();
+    
+    
+    }
+     
+      public void guardarDenunciante(expediente e) throws SQLException{
+    
+        String sql = null;
+        if(!String.valueOf(e.getIdExpediente()).equals(" ") ){
             sql = "";
         }
     PreparedStatement pst = this.conexion.getConexion().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -41,5 +71,17 @@ public class ExpedienteDAO {
     
     }
     
+       public void guardarDenunciado(expediente e) throws SQLException{
+    
+        String sql = null;
+        if(!String.valueOf(e.getIdExpediente()).equals(" ") ){
+            sql = "";
+        }
+    PreparedStatement pst = this.conexion.getConexion().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+    
+    pst.executeUpdate();
+    
+    
+    }
     
 }

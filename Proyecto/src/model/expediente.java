@@ -4,6 +4,7 @@
  */
 package model;
 
+import java.time.LocalDate;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -12,43 +13,82 @@ import javafx.beans.property.StringProperty;
  * @author Dimas
  */
 public class expediente {
-        private int nExpediente;
-        private  StringProperty fecha = new SimpleStringProperty();
-        private StringProperty breveNarracion = new SimpleStringProperty(); 
-        private StringProperty estadoExpediente = new SimpleStringProperty();
+        private int idExpediente;
 
-    public int getnExpediente() {
-        return nExpediente;
+    public String getDelitos() {
+        return delitos;
     }
 
-    public void setnExpediente(int nExpediente) {
-        this.nExpediente = nExpediente;
+    public void setDelitos(String delitos) {
+        this.delitos = delitos;
+    }
+        private  LocalDate fecha;
+        private String breveNarracion; 
+        private String estadoExpediente;
+        private String delitos;
+        private int IdOfendido;
+        private int IdDenunciado;
+        private int IdDenunciante;
+
+    public int getIdOfendido() {
+        return IdOfendido;
     }
 
-    public StringProperty getFecha() {
+    public void setIdOfendido(int IdOfendido) {
+        this.IdOfendido = IdOfendido;
+    }
+
+    public int getIdDenunciado() {
+        return IdDenunciado;
+    }
+
+    public void setIdDenunciado(int IdDenunciado) {
+        this.IdDenunciado = IdDenunciado;
+    }
+
+    public int getIdDenunciante() {
+        return IdDenunciante;
+    }
+
+    public void setIdDenunciante(int IdDenunciante) {
+        this.IdDenunciante = IdDenunciante;
+    }
+
+    public int getIdExpediente() {
+        return idExpediente;
+    }
+
+    public void setIdExpediente(int idExpediente) {
+        this.idExpediente = idExpediente;
+    }
+
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(StringProperty fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 
-    public StringProperty getBreveNarracion() {
+  
+
+    public String getBreveNarracion() {
         return breveNarracion;
     }
 
-    public void setBreveNarracion(StringProperty breveNarracion) {
+    public void setBreveNarracion(String breveNarracion) {
         this.breveNarracion = breveNarracion;
     }
 
-    public StringProperty getEstadoExpediente() {
+    public String getEstadoExpediente() {
         return estadoExpediente;
     }
 
-    public void setEstadoExpediente(StringProperty estadoExpediente) {
+    public void setEstadoExpediente(String estadoExpediente) {
         this.estadoExpediente = estadoExpediente;
     }
-     
+
+ 
     
     
 }
