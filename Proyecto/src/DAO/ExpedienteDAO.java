@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import model.expeOfendido;
 import model.expediente;
 
 
@@ -43,13 +44,13 @@ public class ExpedienteDAO {
     
     }
     
-     public void guardarOfendido(expediente e) throws SQLException{
+     public void guardarOfendido(expeOfendido e) throws SQLException{
     
         String sql = null;
-        if(!String.valueOf(e.getIdExpediente()).equals(" ") ){
+        if(!String.valueOf(e.getIdExpeOfendido()).equals(" ") ){
             sql = "INSERT INTO public.expe_ofendido(\n" +
 "	\"id_expeOfen\", n_expediente, id_ofendido)\n" +
-"	VALUES ('"+e.getIdOfendido()+"','"+e.getIdExpediente()+"','"+e.getIdOfendido()+"');";
+"	VALUES ('"+e.getIdExpeOfendido()+"','"+e.getIdNumExpe()+"','"+e.getIdOfendidoExpe()+"');";
         }
     PreparedStatement pst = this.conexion.getConexion().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
     

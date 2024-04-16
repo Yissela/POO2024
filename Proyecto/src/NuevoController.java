@@ -27,6 +27,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
+import model.expeOfendido;
 import model.expediente;
 import proyecto.data;
 import ventanas.OfendidoController;
@@ -171,11 +172,11 @@ public class NuevoController implements Initializable {
             expediente.setFecha(txFecha.getValue());
             
             
-            expediente expeOfendido = new expediente();
+            expeOfendido expeOfendido = new expeOfendido();
             
-            expeOfendido.setIdOfendido(Integer.parseInt(txtOfendido.getText()));
-            expeOfendido.setIdExpediente(Integer.parseInt(txtOfendido.getText()));
-            expeOfendido.setIdOfendido(Integer.parseInt(txtOfendido.getText()));
+            expeOfendido.setIdExpeOfendido(Integer.parseInt(txtOfendido.getText()));
+            expeOfendido.setIdOfendidoExpe(Integer.parseInt(txtOfendido.getText()));
+            expeOfendido.setIdNumExpe(Integer.parseInt(txtExpediente.getText()));
             
             try{
                 this.conexion.ConectarBases();
