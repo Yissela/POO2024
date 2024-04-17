@@ -189,8 +189,8 @@ public class NuevoController implements Initializable {
             
             expeDenunciante expeDenunciante = new expeDenunciante();
             
-            expeDenunciante.setIdExpeDenunciante(Integer.parseInt(txtDenunciado.getText()));
-            expeDenunciante.setIdExpeDenunciante(Integer.parseInt(txtDenunciado.getText()));
+            expeDenunciante.setIdExpeDenunciante(Integer.parseInt(txtDenunciante.getText()));
+            expeDenunciante.setIdExpeDenunciante(Integer.parseInt(txtDenunciante.getText()));
             expeDenunciante.setIdNumExpe(Integer.parseInt(txtExpediente.getText()));
           
             

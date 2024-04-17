@@ -7,17 +7,19 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ventanas.BuscarController">
+<AnchorPane id="AnchorPane" prefHeight="468.0" prefWidth="679.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ventanas.BuscarController">
    <children>
-      <Button id="btAtras" fx:id="btAtras" layoutX="145.0" layoutY="337.0" mnemonicParsing="false" onAction="#Atras" prefHeight="26.0" prefWidth="79.0" text="Atras" />
-      <Label layoutX="130.0" layoutY="49.0" prefHeight="26.0" prefWidth="65.0" text="Identidad" />
-      <TextField fx:id="id" layoutX="206.0" layoutY="49.0" prefHeight="25.0" prefWidth="188.0" />
-      <Button layoutX="347.0" layoutY="337.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" text="Buscar" />
-      <TableView layoutX="83.0" layoutY="100.0" prefHeight="200.0" prefWidth="448.0">
+      <Button id="btAtras" fx:id="btAtras" layoutX="167.0" layoutY="356.0" mnemonicParsing="false" onAction="#Atras" prefHeight="26.0" prefWidth="79.0" text="Atras" />
+      <Label layoutX="90.0" layoutY="49.0" prefHeight="26.0" prefWidth="105.0" text="No. Expediente" />
+      <TextField fx:id="NoExpediente" layoutX="206.0" layoutY="49.0" prefHeight="25.0" prefWidth="188.0" />
+      <Button layoutX="457.0" layoutY="356.0" mnemonicParsing="false" onAction="#Buscar" prefHeight="26.0" prefWidth="79.0" text="Buscar" />
+      <TableView layoutX="35.0" layoutY="104.0" prefHeight="200.0" prefWidth="588.0">
         <columns>
-          <TableColumn prefWidth="81.0" text="Nombres" />
-          <TableColumn prefWidth="88.0" text="Apellidos" />
-            <TableColumn prefWidth="75.0" />
+          <TableColumn id="txtDelitos" fx:id="tableDelitos" prefWidth="81.0" text="Delitos" />
+          <TableColumn fx:id="tbEstado" prefWidth="88.0" text="Estado " />
+            <TableColumn fx:id="tbDenunciado" prefWidth="137.0" text="Nombre Denunciado" />
+            <TableColumn fx:id="tbDenunciante" prefWidth="144.0" text="Nombre Denunciante" />
+            <TableColumn fx:id="tbOfendido" prefWidth="137.0" text="Nombre Ofendido" />
         </columns>
       </TableView>
    </children>

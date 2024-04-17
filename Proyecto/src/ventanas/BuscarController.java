@@ -19,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -32,11 +33,17 @@ public class BuscarController implements Initializable {
     @FXML
     private Button btAtras;
     @FXML
-    private TextField id;
+    private TextField NoExpediente;
     @FXML
-    private Label LbNombre;
+    private TableColumn<?, ?> tableDelitos;
     @FXML
-    private Label LbApellido;
+    private TableColumn<?, ?> tbEstado;
+    @FXML
+    private TableColumn<?, ?> tbDenunciado;
+    @FXML
+    private TableColumn<?, ?> tbDenunciante;
+    @FXML
+    private TableColumn<?, ?> tbOfendido;
 
     /**
      * Initializes the controller class.
@@ -53,7 +60,7 @@ public class BuscarController implements Initializable {
         
         if(evt.equals(btAtras)){
         
-        logalStage("/ventanas/Delitos.fxml", event);
+        logalStage("/ventanas/fx.fxml", event);
         
         }
     }
@@ -83,6 +90,14 @@ public class BuscarController implements Initializable {
         }
         
     
+    }
+
+    @FXML
+    private void Buscar(ActionEvent event) {
+        
+        
+        
+        
     }
     
 }
