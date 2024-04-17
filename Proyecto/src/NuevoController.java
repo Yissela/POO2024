@@ -27,6 +27,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
+import model.expeDenunciado;
+import model.expeDenunciante;
 import model.expeOfendido;
 import model.expediente;
 import proyecto.data;
@@ -178,15 +180,31 @@ public class NuevoController implements Initializable {
             expeOfendido.setIdOfendidoExpe(Integer.parseInt(txtOfendido.getText()));
             expeOfendido.setIdNumExpe(Integer.parseInt(txtExpediente.getText()));
             
+            
+            expeDenunciado expeDenunciado = new expeDenunciado();
+            
+            expeDenunciado.setIdExpeDenunciado(Integer.parseInt(txtDenunciado.getText()));
+            expeDenunciado.setIdExpeDenunciado(Integer.parseInt(txtDenunciado.getText()));
+            expeDenunciado.setIdNumExpe(Integer.parseInt(txtExpediente.getText()));
+            
+            expeDenunciante expeDenunciante = new expeDenunciante();
+            
+            expeDenunciante.setIdExpeDenunciante(Integer.parseInt(txtDenunciado.getText()));
+            expeDenunciante.setIdExpeDenunciante(Integer.parseInt(txtDenunciado.getText()));
+            expeDenunciante.setIdNumExpe(Integer.parseInt(txtExpediente.getText()));
+          
+            
             try{
                 this.conexion.ConectarBases();
                 ExpedienteDAO expedienteDao = new ExpedienteDAO(conexion);
                 expedienteDao.guardar(expediente);
                 expedienteDao.guardarOfendido(expeOfendido);
+                expedienteDao.guardarDenunciado(expeDenunciado);
+                expedienteDao.guardarDenunciante(expeDenunciante);
                 
             
             }catch(SQLException ex){
-            Logger.getLogger(OfendidoController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(NuevoController.class.getName()).log(Level.SEVERE, null, ex);
                  JOptionPane.showMessageDialog(null, "Eror al guardar");
             }
 

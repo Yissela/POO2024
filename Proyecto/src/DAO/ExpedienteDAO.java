@@ -9,6 +9,8 @@ import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import model.expeDenunciado;
+import model.expeDenunciante;
 import model.expeOfendido;
 import model.expediente;
 
@@ -59,11 +61,13 @@ public class ExpedienteDAO {
     
     }
      
-      public void guardarDenunciante(expediente e) throws SQLException{
+      public void guardarDenunciante(expeDenunciante e) throws SQLException{
     
         String sql = null;
-        if(!String.valueOf(e.getIdExpediente()).equals(" ") ){
-            sql = "";
+        if(!String.valueOf(e.getIdExpeDenunciante()).equals(" ") ){
+            sql = "INSERT INTO public.expe_denunciante(\n" +
+"	\"id_expeDenu\", n_expediente, id_denunciante)\n" +
+"	VALUES ('"+e.getIdExpeDenunciante()+"','"+e.getIdNumExpe()+"','"+e.getIdDenuncianteExpe()+"');";
         }
     PreparedStatement pst = this.conexion.getConexion().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
     
@@ -72,11 +76,13 @@ public class ExpedienteDAO {
     
     }
     
-       public void guardarDenunciado(expediente e) throws SQLException{
+       public void guardarDenunciado(expeDenunciado e) throws SQLException{
     
         String sql = null;
-        if(!String.valueOf(e.getIdExpediente()).equals(" ") ){
-            sql = "";
+        if(!String.valueOf(e.getIdExpeDenunciado()).equals(" ") ){
+            sql = "INSERT INTO public.expe_detenido(\n" +
+"	\"id_expeDete\", n_expediente, id_detenido)\n" +
+"	VALUES ('"+e.getIdExpeDenunciado()+"','"+e.getIdNumExpe()+"','"+e.getIdDenunciaExpe()+"');";
         }
     PreparedStatement pst = this.conexion.getConexion().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
     
