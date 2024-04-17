@@ -56,12 +56,15 @@ public class BuscarController implements Initializable {
     private TableColumn<?, ?> tbOfendido;
     
     ExpedienteDAO ExpedienteDao;
+    
+    
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         // TODO
     }    
     

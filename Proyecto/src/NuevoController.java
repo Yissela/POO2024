@@ -40,6 +40,9 @@ import ventanas.OfendidoController;
  * @author Dimas
  */
 public class NuevoController implements Initializable {
+    
+    
+    ObservableList<expediente> Lista = FXCollections.observableArrayList();
 
     @FXML
     private DatePicker txFecha;
@@ -203,7 +206,7 @@ public class NuevoController implements Initializable {
                 expedienteDao.guardarOfendido(expeOfendido);
                 expedienteDao.guardarDenunciado(expeDenunciado);
                 expedienteDao.guardarDenunciante(expeDenunciante);
-                
+                Lista();
             
             }catch(SQLException ex){
             Logger.getLogger(NuevoController.class.getName()).log(Level.SEVERE, null, ex);
@@ -217,5 +220,21 @@ public class NuevoController implements Initializable {
         
     }
     
+    ExpedienteDAO Expediente;
+    public void Lista() throws SQLException{
+        try{
+        
+            this.conexion.ConectarBases();
+            Expediente = new ExpedienteDAO(conexion);
+            Lista.setAll(Expediente.getAll());
+        
+        }catch(SQLException ex){
+            Logger.getLogger(NuevoController.class.getName()).log(Level.SEVERE, null, ex);
+    
+        } finally {
+        
+        this.conexion.CERRAR();
+        }
+    }
     
 }
