@@ -69,6 +69,8 @@ public class NuevoController implements Initializable {
     private TextField txtExpediente;
     
      private  data conexion = new data();
+     
+    
     
     
     @FXML
@@ -176,20 +178,20 @@ public class NuevoController implements Initializable {
             
             expeOfendido expeOfendido = new expeOfendido();
             
-            expeOfendido.setIdExpeOfendido(Integer.parseInt(txtOfendido.getText()));
+            expeOfendido.setIdExpeOfendido(Integer.parseInt(txtExpediente.getText()));
             expeOfendido.setIdOfendidoExpe(Integer.parseInt(txtOfendido.getText()));
             expeOfendido.setIdNumExpe(Integer.parseInt(txtExpediente.getText()));
             
             
             expeDenunciado expeDenunciado = new expeDenunciado();
             
-            expeDenunciado.setIdExpeDenunciado(Integer.parseInt(txtDenunciado.getText()));
-            expeDenunciado.setIdExpeDenunciado(Integer.parseInt(txtDenunciado.getText()));
+            expeDenunciado.setIdExpeDenunciado(Integer.parseInt(txtExpediente.getText()));
+            expeDenunciado.setIdDenunciaExpe(Integer.parseInt(txtDenunciado.getText()));
             expeDenunciado.setIdNumExpe(Integer.parseInt(txtExpediente.getText()));
             
             expeDenunciante expeDenunciante = new expeDenunciante();
             
-            expeDenunciante.setIdExpeDenunciante(Integer.parseInt(txtDenunciante.getText()));
+            expeDenunciante.setIdExpeDenunciante(Integer.parseInt(txtExpediente.getText()));
             expeDenunciante.setIdExpeDenunciante(Integer.parseInt(txtDenunciante.getText()));
             expeDenunciante.setIdNumExpe(Integer.parseInt(txtExpediente.getText()));
           

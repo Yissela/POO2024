@@ -73,10 +73,10 @@ public class DenuncianteController implements Initializable {
             denunciante.setId(Integer.parseInt(txtId.getText()));
             denunciante.setNombre(txtNombre.getText());
             denunciante.setApellido(txtApellido.getText());
-            denunciante.setEstado_civil(txtEstado.getText());
+            //denunciante.setEstado_civil(txtEstado.getText());
             denunciante.setSexo(txtDelitos.getText());
             denunciante.setGenero(txtGenero.getText());
-            denunciante.setDireccion(txtReferencia.getText());
+            denunciante.setDireccion(txtEstado.getText());
             try{
                 this.conexion.ConectarBases();
                 DenuncianteDAO denuncianteDao = new DenuncianteDAO(conexion);

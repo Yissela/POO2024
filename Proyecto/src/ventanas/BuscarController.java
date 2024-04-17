@@ -4,8 +4,10 @@
  */
 package ventanas;
 
+import DAO.ExpedienteDAO;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,7 +24,15 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import proyecto.data;
 
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 /**
  * FXML Controller class
  *
@@ -44,6 +54,8 @@ public class BuscarController implements Initializable {
     private TableColumn<?, ?> tbDenunciante;
     @FXML
     private TableColumn<?, ?> tbOfendido;
+    
+    ExpedienteDAO ExpedienteDao;
 
     /**
      * Initializes the controller class.
@@ -52,6 +64,9 @@ public class BuscarController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+    
+    private data conexion = new data();
 
     @FXML
     private void Atras(ActionEvent event) {
@@ -99,5 +114,9 @@ public class BuscarController implements Initializable {
         
         
     }
+    
+    
+    
+    
     
 }

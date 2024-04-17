@@ -9,6 +9,8 @@ import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 import model.expeDenunciado;
 import model.expeDenunciante;
 import model.expeOfendido;
@@ -90,5 +92,34 @@ public class ExpedienteDAO {
     
     
     }
+       
+       
+       public List<expediente> getAll() throws SQLException {
+       
+                List<expediente> lista  = new ArrayList();
+                
+                expediente e = null;
+                
+                ResultSet rs = this.conexion.CONSULTAR("SELECT o.id_ofendido, o.nombre, expe.delito, expe.estado_expe, d.id_detenido,d.nombre\n" +
+"FROM expediente expe\n" +
+"JOIN expe_ofendido ex ON ex.n_expediente = expe.n_expediente\n" +
+"JOIN ofendido o ON o.id_ofendido = ex.id_ofendido\n" +
+"JOIN expe_detenido exDete ON expe.n_expediente = exDete.n_expediente\n" +
+"Join detenido d ON d.id_detenido = exDete.id_detenido;");
+                    while (rs.next()){
+                         e = new expediente();
+                    e.setDelitos(rs.getString("expe.delito").trim());
+                    e.setEstadoExpediente(rs.getString("expe.estado_expe").trim());
+                    e.setIdOfendido(rs.getInt("o.id_Ofendido"));
+                    e.setIdDenunciado(rs.getInt("d.id_detenido"));
+                    }
+                
+                    lista.add(e);
+                
+                    
+                    return lista;
+       }
+       
+       
     
 }
